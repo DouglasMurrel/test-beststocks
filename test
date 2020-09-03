@@ -1,0 +1,41 @@
+
+M:\JetBrains\projects\test-beststocks>m:/openserver/distr/ospanel/modules/php/PHP_7.3-x64/php yii migrate        
+Yii Migration Tool (based on Yii v2.0.37)
+
+Total 1 new migration to be applied:
+	m200903_212914_create_user_table
+
+Apply the above migration? (yes|no) [no]:*** applying m200903_212914_create_user_table
+    > create table {{%user}} ... done (time: 0.527s)
+    > insert into {{%user} ...Exception: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{{user}' at line 1
+The SQL being executed was: SHOW FULL COLUMNS FROM {{user} (M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Schema.php:677)
+#0 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Command.php(1298): yii\db\Schema->convertException(Object(PDOException), 'SHOW FULL COLUM...')
+#1 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Command.php(1159): yii\db\Command->internalExecute('SHOW FULL COLUM...')
+#2 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#4 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#5 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Schema.php(757): yii\db\mysql\Schema->loadTableSchema('{{user}')
+#6 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%user}', 'schema', false)
+#7 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\QueryBuilder.php(458): yii\db\Schema->getTableSchema('{{%user}')
+#8 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Command.php(509): yii\db\QueryBuilder->batchInsert('{{%user}', Array, Array, Array)
+#9 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Migration.php(246): yii\db\Command->batchInsert('{{%user}', Array, Array)
+#10 M:\JetBrains\projects\test-beststocks\migrations\m200903_212914_create_user_table.php(22): yii\db\Migration->batchInsert('{{%user}', Array, Array)
+#11 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\db\Migration.php(114): m200903_212914_create_user_table->safeUp()
+#12 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(727): yii\db\Migration->up()
+#13 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(202): yii\console\controllers\BaseMigrateController->migrateUp('m200903_212914_...')
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#17 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\console\Controller.php(179): yii\base\Controller->runAction('', Array)
+#18 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 M:\JetBrains\projects\test-beststocks\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 M:\JetBrains\projects\test-beststocks\yii(20): yii\base\Application->run()
+#23 {main}
+*** failed to apply m200903_212914_create_user_table (time: 0.530s)
+
+
+0 from 1 migrations were applied.
+
+Migration failed. The rest of the migrations are canceled.
